@@ -1,0 +1,521 @@
+.ovabrw-search-hotel .product-search-form {
+  position: relative;
+  display: flex;
+  background-color: #fff;
+  border-radius: 0;
+  box-shadow: 0 10px 60px rgba(0, 0, 0, 0.1);
+}
+@media (max-width: 1024px) {
+  .ovabrw-search-hotel .product-search-form {
+    flex-direction: column;
+  }
+}
+.ovabrw-search-hotel .product-search-form.column1 {
+  flex-direction: column;
+}
+.ovabrw-search-hotel .product-search-form.column1 .product-search-submit .ovabrw_btn_submit {
+  height: 75px;
+}
+.ovabrw-search-hotel .product-search-form .product-search-content {
+  position: relative;
+  display: grid;
+  grid-gap: 28px;
+  align-items: center;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 38px;
+}
+@media (max-width: 1024px) {
+  .ovabrw-search-hotel .product-search-form .product-search-content {
+    padding: 38px 28px;
+  }
+}
+.ovabrw-search-hotel .product-search-form .product-search-content.column1 {
+  grid-template-columns: 1fr;
+}
+.ovabrw-search-hotel .product-search-form .product-search-content.column1 .label_search:before {
+  content: none !important;
+}
+.ovabrw-search-hotel .product-search-form .product-search-content.column2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+.ovabrw-search-hotel .product-search-form .product-search-content.column3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+.ovabrw-search-hotel .product-search-form .product-search-content.column4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+.ovabrw-search-hotel .product-search-form .product-search-content.column5 {
+  grid-template-columns: 1fr 1fr 1fr 1fr 0.66fr;
+}
+@media screen and (max-width: 1124px) {
+  .ovabrw-search-hotel .product-search-form .product-search-content.column4, .ovabrw-search-hotel .product-search-form .product-search-content.column5 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media screen and (max-width: 1024px) {
+  .ovabrw-search-hotel .product-search-form .product-search-content.column3, .ovabrw-search-hotel .product-search-form .product-search-content.column4, .ovabrw-search-hotel .product-search-form .product-search-content.column5 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (max-width: 768px) {
+  .ovabrw-search-hotel .product-search-form .product-search-content.column2, .ovabrw-search-hotel .product-search-form .product-search-content.column3, .ovabrw-search-hotel .product-search-form .product-search-content.column4, .ovabrw-search-hotel .product-search-form .product-search-content.column5 {
+    grid-template-columns: 1fr;
+  }
+}
+.ovabrw-search-hotel .product-search-form .product-search-content .label_search {
+  position: relative;
+}
+.ovabrw-search-hotel .product-search-form .product-search-content .label_search:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 0;
+  display: block;
+  height: 45px;
+  width: 1px;
+  background-color: #e4e4e4;
+}
+@media (max-width: 1024px) {
+  .ovabrw-search-hotel .product-search-form .product-search-content .label_search:before {
+    content: none;
+  }
+}
+.ovabrw-search-hotel .product-search-form .product-search-content .label_search:nth-last-child(-n+1):before {
+  content: none;
+}
+.ovabrw-search-hotel .product-search-form .product-search-content .label_search input[type=text], .ovabrw-search-hotel .product-search-form .product-search-content .label_search select {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--ovabrw-heading-color);
+  background-color: transparent;
+  border-radius: 0;
+  padding: 0 4px;
+  height: auto;
+  border: none;
+  box-shadow: none;
+  background-position: calc(100% - 24px) center;
+}
+.ovabrw-search-hotel .product-search-form .product-search-content .label_search input[type=text]::placeholder, .ovabrw-search-hotel .product-search-form .product-search-content .label_search select::placeholder {
+  opacity: 1;
+  color: var(--ovabrw-heading-color);
+}
+.ovabrw-search-hotel .product-search-form .product-search-content .label_search input[type=text]:focus, .ovabrw-search-hotel .product-search-form .product-search-content .label_search select:focus {
+  color: var(--ovabrw-heading-color);
+}
+.ovabrw-search-hotel .product-search-form .product-search-content .label_search select option {
+  font-weight: inherit;
+}
+.ovabrw-search-hotel .product-search-form .product-search-content .label_search .field-label {
+  margin: 0 4px 8px 4px;
+  font-size: 14px;
+  color: var(--ovabrw-text-color);
+  text-transform: uppercase;
+}
+.ovabrw-search-hotel .product-search-form .product-search-content .label_search .quantity-button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  width: 100%;
+  gap: 5px;
+}
+.ovabrw-search-hotel .product-search-form .product-search-content .label_search .quantity-button .quantity-icon {
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  position: absolute;
+  right: 20px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 25px;
+  height: 25px;
+  text-align: center;
+  border: none;
+  border-radius: 4px;
+  background-color: #ecf0f4;
+  cursor: pointer;
+}
+.ovabrw-search-hotel .product-search-form .product-search-content .label_search .quantity-button .quantity-icon.minus {
+  right: 50px;
+}
+.ovabrw-search-hotel .product-search-form .product-search-content .label_search .quantity-button .quantity-icon:hover {
+  color: #FFF;
+  background-color: var(--ovabrw-primary-color);
+}
+.ovabrw-search-hotel .product-search-form .product-search-content .label_search .quantity-button .quantity-icon span {
+  display: inline-flex;
+}
+.ovabrw-search-hotel .product-search-form .product-search-content .label_search .quantity-button .quantity-icon span:before {
+  font-size: 12px;
+  margin: 0;
+  line-height: 1;
+}
+.ovabrw-search-hotel .product-search-form .product-search-content .label_search.ova-pickup-date i, .ovabrw-search-hotel .product-search-form .product-search-content .label_search.ova-dropoff-date i {
+  position: absolute;
+  right: 24px;
+  bottom: 50%;
+  transform: translateY(50%);
+  line-height: 1;
+}
+.ovabrw-search-hotel .product-search-form .product-search-content .label_search .ovabrw-filter-price-slider {
+  display: flex;
+  align-items: flex-end;
+  height: 40px;
+  padding-bottom: 10px;
+}
+.ovabrw-search-hotel .product-search-form .product-search-content .label_search .ovabrw-filter-price-slider .product-filter-price {
+  position: relative;
+  width: 100%;
+  height: 8px;
+  background: var(--ovabrw-light-color);
+  border: none;
+  border-radius: 4px;
+  transition: background 0.3s ease;
+  cursor: pointer;
+  box-shadow: unset;
+}
+.ovabrw-search-hotel .product-search-form .product-search-content .label_search .ovabrw-filter-price-slider .product-filter-price .noUi-base .noUi-connects {
+  border-radius: 4px;
+}
+.ovabrw-search-hotel .product-search-form .product-search-content .label_search .ovabrw-filter-price-slider .product-filter-price .noUi-base .noUi-connects .noUi-connect {
+  background: var(--ovabrw-primary-color);
+}
+.ovabrw-search-hotel .product-search-form .product-search-content .label_search .ovabrw-filter-price-slider .product-filter-price .noUi-base .noUi-origin .noUi-handle {
+  border: none;
+  border-radius: 4px;
+  background: transparent;
+  box-shadow: unset;
+  width: 0;
+  height: 0;
+  top: 0;
+  right: 3px;
+}
+.ovabrw-search-hotel .product-search-form .product-search-content .label_search .ovabrw-filter-price-slider .product-filter-price .noUi-base .noUi-origin .noUi-handle .noUi-touch-area {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-30%);
+  width: 16px;
+  height: 16px;
+  background: #FFFFFF;
+  border: 1px solid var(--ovabrw-light-color);
+  border-radius: 50%;
+  cursor: pointer;
+  outline: none;
+}
+.ovabrw-search-hotel .product-search-form .product-search-content .label_search .ovabrw-filter-price-slider .product-filter-price .noUi-base .noUi-origin .noUi-handle .noUi-tooltip {
+  font-family: var(--ovabrw-primary-font);
+  font-size: var(--ovabrw-text-size);
+  font-weight: var(--ovabrw-text-weight);
+  line-height: var(--ovabrw-text-line-height);
+  color: var(--ovabrw-text-color);
+  padding: 0 5px;
+  font-size: 14px;
+  transform: translate(-30%, 0);
+  margin-bottom: 7px;
+  border: 1px solid var(--ovabrw-light-color);
+}
+.ovabrw-search-hotel .product-search-form .product-search-content .label_search .ovabrw-filter-price-slider .product-filter-price .noUi-base .noUi-origin .noUi-handle:before, .ovabrw-search-hotel .product-search-form .product-search-content .label_search .ovabrw-filter-price-slider .product-filter-price .noUi-base .noUi-origin .noUi-handle:after {
+  display: none;
+}
+.ovabrw-search-hotel .product-search-form .product-search-content .ovabrw-value-attribute {
+  display: none;
+  width: 100%;
+}
+.ovabrw-search-hotel .product-search-form .product-search-content .ovabrw-wrapper-guestspicker .ovabrw-guestspicker {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--ovabrw-heading-color);
+  background-color: transparent;
+  padding: 0 4px;
+}
+.ovabrw-search-hotel .product-search-form .product-search-content .ovabrw-wrapper-guestspicker .ovabrw-guestspicker-content .guests-buttons {
+  height: 40px;
+}
+.ovabrw-search-hotel .product-search-form .product-search-content .show_taxonomy {
+  display: none;
+}
+.ovabrw-search-hotel .product-search-form .product-search-submit .ovabrw_btn_submit {
+  transition: all 0.3s ease;
+  height: 100%;
+  width: 100%;
+  min-width: 140px;
+  font-size: 30px;
+  font-weight: bold;
+  line-height: 1.2;
+  color: #fff;
+  padding: 0 40px;
+  border-radius: 0;
+  background-color: var(--ovabrw-primary-color);
+  border: 1px solid var(--ovabrw-primary-color);
+}
+@media (max-width: 1024px) {
+  .ovabrw-search-hotel .product-search-form .product-search-submit .ovabrw_btn_submit {
+    height: 75px;
+  }
+}
+.ovabrw-search-hotel .product-search-form .product-search-submit .ovabrw_btn_submit:hover {
+  transition: all 0.3s ease;
+  background-color: var(--ovabrw-heading-color);
+}
+
+.ovabrw-search-hotel2 .product-search-form {
+  position: relative;
+}
+.ovabrw-search-hotel2 .product-search-form .product-search-content {
+  position: relative;
+  display: grid;
+  align-items: flex-end;
+  grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: 12px;
+  grid-row-gap: 20px;
+  padding: 35px;
+  border-radius: 10px;
+}
+@media screen and (max-width: 768px) {
+  .ovabrw-search-hotel2 .product-search-form .product-search-content {
+    padding: 30px 25px;
+  }
+}
+.ovabrw-search-hotel2 .product-search-form .product-search-content.column1 {
+  grid-template-columns: 1fr;
+}
+.ovabrw-search-hotel2 .product-search-form .product-search-content.column1 .label_search:before {
+  content: none !important;
+}
+.ovabrw-search-hotel2 .product-search-form .product-search-content.column2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+.ovabrw-search-hotel2 .product-search-form .product-search-content.column3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+.ovabrw-search-hotel2 .product-search-form .product-search-content.column4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+.ovabrw-search-hotel2 .product-search-form .product-search-content.column5 {
+  grid-template-columns: 1fr 1fr 1fr 1fr 0.66fr;
+}
+@media screen and (max-width: 1200px) {
+  .ovabrw-search-hotel2 .product-search-form .product-search-content.column4, .ovabrw-search-hotel2 .product-search-form .product-search-content.column5 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media screen and (max-width: 1024px) {
+  .ovabrw-search-hotel2 .product-search-form .product-search-content.column3, .ovabrw-search-hotel2 .product-search-form .product-search-content.column4, .ovabrw-search-hotel2 .product-search-form .product-search-content.column5 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (max-width: 768px) {
+  .ovabrw-search-hotel2 .product-search-form .product-search-content.column2, .ovabrw-search-hotel2 .product-search-form .product-search-content.column3, .ovabrw-search-hotel2 .product-search-form .product-search-content.column4, .ovabrw-search-hotel2 .product-search-form .product-search-content.column5 {
+    grid-template-columns: 1fr;
+  }
+}
+.ovabrw-search-hotel2 .product-search-form .product-search-content .heading {
+  grid-column: 1/-1;
+  text-align: center;
+}
+.ovabrw-search-hotel2 .product-search-form .product-search-content .heading .search-heading {
+  margin: 0 0 10px 0;
+  font-size: 32px;
+  font-weight: 600;
+}
+.ovabrw-search-hotel2 .product-search-form .product-search-content .heading .search-desc {
+  margin: 0 0 18px 0;
+}
+.ovabrw-search-hotel2 .product-search-form .product-search-content .label_search {
+  position: relative;
+}
+.ovabrw-search-hotel2 .product-search-form .product-search-content .label_search input[type=text], .ovabrw-search-hotel2 .product-search-form .product-search-content .label_search select {
+  padding: 0 24px;
+  font-size: 15px;
+  font-weight: var(--ovabrw-text-weight);
+  color: var(--ovabrw-text-color);
+  background-color: #ecf0f4;
+  border-radius: 10px;
+  height: 65px;
+  border: none;
+  background-position: calc(100% - 24px) center;
+  box-shadow: none;
+}
+.ovabrw-search-hotel2 .product-search-form .product-search-content .label_search input[type=text]::placeholder, .ovabrw-search-hotel2 .product-search-form .product-search-content .label_search select::placeholder {
+  opacity: 1;
+  color: var(--ovabrw-light-color);
+}
+.ovabrw-search-hotel2 .product-search-form .product-search-content .label_search input[type=text]:focus, .ovabrw-search-hotel2 .product-search-form .product-search-content .label_search select:focus {
+  color: var(--ovabrw-heading-color);
+}
+.ovabrw-search-hotel2 .product-search-form .product-search-content .label_search .ovabrw-guestspicker {
+  height: 65px;
+  border-radius: 10px;
+  padding: 20px 24px;
+}
+.ovabrw-search-hotel2 .product-search-form .product-search-content .label_search select option {
+  font-weight: inherit;
+}
+.ovabrw-search-hotel2 .product-search-form .product-search-content .label_search .field-label {
+  margin: 0 0 8px 0;
+  font-size: var(--ovabrw-label-size);
+  color: var(--ovabrw-heading-color);
+  font-weight: 500;
+}
+.ovabrw-search-hotel2 .product-search-form .product-search-content .label_search .quantity-button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  width: 100%;
+  gap: 5px;
+}
+.ovabrw-search-hotel2 .product-search-form .product-search-content .label_search .quantity-button .quantity-icon {
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  position: absolute;
+  right: 20px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 25px;
+  height: 25px;
+  text-align: center;
+  border: none;
+  border-radius: 4px;
+  background-color: #ecf0f4;
+  cursor: pointer;
+}
+.ovabrw-search-hotel2 .product-search-form .product-search-content .label_search .quantity-button .quantity-icon.minus {
+  right: 50px;
+}
+.ovabrw-search-hotel2 .product-search-form .product-search-content .label_search .quantity-button .quantity-icon:hover {
+  color: #FFF;
+  background-color: var(--ovabrw-primary-color);
+}
+.ovabrw-search-hotel2 .product-search-form .product-search-content .label_search .quantity-button .quantity-icon span {
+  display: flex;
+}
+.ovabrw-search-hotel2 .product-search-form .product-search-content .label_search .quantity-button .quantity-icon span:before {
+  font-size: 10px;
+  line-height: 1;
+}
+.ovabrw-search-hotel2 .product-search-form .product-search-content .label_search.ova-pickup-date i, .ovabrw-search-hotel2 .product-search-form .product-search-content .label_search.ova-dropoff-date i {
+  position: absolute;
+  right: 24px;
+  bottom: 50%;
+  transform: translateY(50%);
+  line-height: 1;
+}
+.ovabrw-search-hotel2 .product-search-form .product-search-content .label_search .ovabrw-filter-price-slider {
+  display: flex;
+  align-items: flex-end;
+  height: 45px;
+  padding-bottom: 10px;
+}
+.ovabrw-search-hotel2 .product-search-form .product-search-content .label_search .ovabrw-filter-price-slider .product-filter-price {
+  position: relative;
+  width: 100%;
+  height: 8px;
+  background: var(--ovabrw-light-color);
+  border: none;
+  border-radius: 4px;
+  transition: background 0.3s ease;
+  cursor: pointer;
+  box-shadow: unset;
+}
+.ovabrw-search-hotel2 .product-search-form .product-search-content .label_search .ovabrw-filter-price-slider .product-filter-price .noUi-base .noUi-connects {
+  border-radius: 4px;
+}
+.ovabrw-search-hotel2 .product-search-form .product-search-content .label_search .ovabrw-filter-price-slider .product-filter-price .noUi-base .noUi-connects .noUi-connect {
+  background: var(--ovabrw-primary-color);
+}
+.ovabrw-search-hotel2 .product-search-form .product-search-content .label_search .ovabrw-filter-price-slider .product-filter-price .noUi-base .noUi-origin .noUi-handle {
+  border: none;
+  border-radius: 4px;
+  background: transparent;
+  box-shadow: unset;
+  width: 0;
+  height: 0;
+  top: 0;
+  right: 3px;
+}
+.ovabrw-search-hotel2 .product-search-form .product-search-content .label_search .ovabrw-filter-price-slider .product-filter-price .noUi-base .noUi-origin .noUi-handle .noUi-touch-area {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-30%);
+  width: 16px;
+  height: 16px;
+  background: #FFFFFF;
+  border: 1px solid var(--ovabrw-light-color);
+  border-radius: 50%;
+  cursor: pointer;
+  outline: none;
+}
+.ovabrw-search-hotel2 .product-search-form .product-search-content .label_search .ovabrw-filter-price-slider .product-filter-price .noUi-base .noUi-origin .noUi-handle .noUi-tooltip {
+  font-family: var(--ovabrw-primary-font);
+  font-size: var(--ovabrw-text-size);
+  font-weight: var(--ovabrw-text-weight);
+  line-height: var(--ovabrw-text-line-height);
+  color: var(--ovabrw-text-color);
+  padding: 0 5px;
+  font-size: 14px;
+  transform: translate(-40%, 0);
+  margin-bottom: 7px;
+  border: 1px solid var(--ovabrw-light-color);
+}
+.ovabrw-search-hotel2 .product-search-form .product-search-content .label_search .ovabrw-filter-price-slider .product-filter-price .noUi-base .noUi-origin .noUi-handle:before, .ovabrw-search-hotel2 .product-search-form .product-search-content .label_search .ovabrw-filter-price-slider .product-filter-price .noUi-base .noUi-origin .noUi-handle:after {
+  display: none;
+}
+.ovabrw-search-hotel2 .product-search-form .product-search-content .wrap_search_location {
+  cursor: pointer;
+}
+.ovabrw-search-hotel2 .product-search-form .product-search-content .wrap_search_location .locate_me {
+  position: absolute;
+  right: 24px;
+  bottom: 50%;
+  transform: translateY(50%);
+  line-height: 1;
+  color: var(--ovabrw-primary-color);
+}
+.ovabrw-search-hotel2 .product-search-form .product-search-content .ovabrw-value-attribute {
+  display: none;
+  width: 100%;
+}
+.ovabrw-search-hotel2 .product-search-form .product-search-content .show_taxonomy {
+  display: none;
+}
+.ovabrw-search-hotel2 .product-search-form .product-search-submit .ovabrw_btn_submit {
+  transition: all 0.3s ease;
+  min-width: 150px;
+  height: 65px;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 1.2;
+  color: #fff;
+  padding: 0 40px;
+  background-color: var(--ovabrw-primary-color);
+  border: none;
+  border-radius: 10px;
+}
+.ovabrw-search-hotel2 .product-search-form .product-search-submit .ovabrw_btn_submit:hover {
+  transition: all 0.3s ease;
+  background-color: var(--ovabrw-heading-color);
+}
+
+body.rtl .ovabrw-search-hotel.ovabrw_wd_search .product-search-form .product-search-content .label_search select {
+  background-position: left 24px top 50%;
+}
+body.rtl .ovabrw-search-hotel.ovabrw_wd_search .product-search-form .product-search-content .label_search .quantity-button .quantity-icon {
+  right: unset;
+  left: 20px;
+}
+body.rtl .ovabrw-search-hotel.ovabrw_wd_search .product-search-form .product-search-content .label_search .quantity-button .quantity-icon.minus {
+  left: 50px;
+}
+body.rtl .ovabrw-search-hotel.ovabrw_wd_search .product-search-form .product-search-content .label_search.ova-pickup-date i, body.rtl .ovabrw-search-hotel.ovabrw_wd_search .product-search-form .product-search-content .label_search.ova-dropoff-date i {
+  right: unset;
+  left: 24px;
+}
+body.rtl .ovabrw-search-hotel2 .product-search-form .product-search-content .label_search.ova-pickup-date i, body.rtl .ovabrw-search-hotel2 .product-search-form .product-search-content .label_search.ova-dropoff-date i {
+  right: unset;
+  left: 24px;
+}

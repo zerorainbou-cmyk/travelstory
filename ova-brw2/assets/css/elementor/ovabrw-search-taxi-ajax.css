@@ -1,0 +1,302 @@
+.ovabrw-search-taxi-ajax .search-taxi-form {
+  margin-bottom: 50px;
+}
+.ovabrw-search-taxi-ajax .search-taxi-form .search-taxi-fields {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 23px;
+  row-gap: 30px;
+}
+.ovabrw-search-taxi-ajax .search-taxi-form .search-taxi-fields.search-grid-1 {
+  grid-template-columns: repeat(1, 1fr);
+}
+.ovabrw-search-taxi-ajax .search-taxi-form .search-taxi-fields.search-grid-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+.ovabrw-search-taxi-ajax .search-taxi-form .search-taxi-fields.search-grid-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+.ovabrw-search-taxi-ajax .search-taxi-form .search-taxi-fields.search-grid-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+.ovabrw-search-taxi-ajax .search-taxi-form .search-taxi-fields.search-grid-5 {
+  grid-template-columns: repeat(5, 1fr);
+}
+.ovabrw-search-taxi-ajax .search-taxi-form .search-taxi-fields .search-field {
+  position: relative;
+}
+.ovabrw-search-taxi-ajax .search-taxi-form .search-taxi-fields .search-field label {
+  display: block;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-transform: capitalize;
+  color: #222;
+  margin-bottom: 12px;
+}
+.ovabrw-search-taxi-ajax .search-taxi-form .search-taxi-fields .search-field input, .ovabrw-search-taxi-ajax .search-taxi-form .search-taxi-fields .search-field select {
+  width: 100%;
+  height: 53px;
+  border-radius: 6px;
+  border: 1px solid #EBEBEB;
+  color: #5E5F63;
+  background-color: #fff;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 500;
+  padding: 10px 40px 10px 17px;
+  box-shadow: none;
+}
+.ovabrw-search-taxi-ajax .search-taxi-form .search-taxi-fields .search-field input[type=number]::-webkit-inner-spin-button,
+.ovabrw-search-taxi-ajax .search-taxi-form .search-taxi-fields .search-field input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.ovabrw-search-taxi-ajax .search-taxi-form .search-taxi-fields .search-field input[type=number] {
+  -moz-appearance: textfield;
+  /* Firefox */
+}
+.ovabrw-search-taxi-ajax .search-taxi-form .search-taxi-fields .search-field select {
+  background-image: unset;
+  -webkit-appearance: none;
+  /* Safari and Chrome */
+  -moz-appearance: none;
+  /* Firefox */
+  appearance: none;
+  background: none;
+}
+.ovabrw-search-taxi-ajax .search-taxi-form .search-taxi-fields .search-field select::-ms-expand {
+  display: none;
+}
+.ovabrw-search-taxi-ajax .search-taxi-form .search-taxi-fields .search-field > i {
+  position: absolute;
+  top: 45px;
+  right: 22px;
+  font-size: 16px;
+  color: #222222;
+}
+.ovabrw-search-taxi-ajax .search-taxi-form .search-taxi-fields .search-field.search-field-btn {
+  display: flex;
+  align-items: flex-end;
+}
+.ovabrw-search-taxi-ajax .search-taxi-form .search-taxi-fields .search-field.search-field-btn .search-taxi-btn {
+  width: 100%;
+  color: #000;
+  text-align: center;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+  border-radius: 7px;
+  background-color: #FDB900;
+  padding: 17px 0;
+  box-shadow: 0px 10px 37px 0px rgba(253, 185, 0, 0.35);
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.ovabrw-search-taxi-ajax .search-taxi-form .search-taxi-fields .search-field.search-field-btn .search-taxi-btn i {
+  margin-right: 5px;
+}
+.ovabrw-search-taxi-ajax .search-taxi-form .search-taxi-fields .search-field.search-field-btn .search-taxi-btn i:before {
+  font-size: 16px;
+}
+.ovabrw-search-taxi-ajax .search-taxi-form .search-taxi-fields .search-field .ovabrw-filter-price-slider {
+  display: flex;
+  align-items: flex-end;
+  height: 45px;
+  padding-bottom: 10px;
+}
+.ovabrw-search-taxi-ajax .search-taxi-form .search-taxi-fields .search-field .ovabrw-filter-price-slider .product-filter-price {
+  position: relative;
+  width: 100%;
+  height: 8px;
+  background: var(--ovabrw-light-color);
+  border: none;
+  border-radius: 4px;
+  transition: background 0.3s ease;
+  cursor: pointer;
+  box-shadow: unset;
+}
+.ovabrw-search-taxi-ajax .search-taxi-form .search-taxi-fields .search-field .ovabrw-filter-price-slider .product-filter-price .noUi-base .noUi-connects {
+  border-radius: 4px;
+}
+.ovabrw-search-taxi-ajax .search-taxi-form .search-taxi-fields .search-field .ovabrw-filter-price-slider .product-filter-price .noUi-base .noUi-connects .noUi-connect {
+  background: var(--ovabrw-primary-color);
+}
+.ovabrw-search-taxi-ajax .search-taxi-form .search-taxi-fields .search-field .ovabrw-filter-price-slider .product-filter-price .noUi-base .noUi-origin .noUi-handle {
+  border: none;
+  border-radius: 4px;
+  background: transparent;
+  box-shadow: unset;
+  width: 0;
+  height: 0;
+  top: 0;
+  right: 3px;
+}
+.ovabrw-search-taxi-ajax .search-taxi-form .search-taxi-fields .search-field .ovabrw-filter-price-slider .product-filter-price .noUi-base .noUi-origin .noUi-handle .noUi-touch-area {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-30%);
+  width: 16px;
+  height: 16px;
+  background: #FFFFFF;
+  border: 1px solid var(--ovabrw-light-color);
+  border-radius: 50%;
+  cursor: pointer;
+  outline: none;
+}
+.ovabrw-search-taxi-ajax .search-taxi-form .search-taxi-fields .search-field .ovabrw-filter-price-slider .product-filter-price .noUi-base .noUi-origin .noUi-handle .noUi-tooltip {
+  font-family: var(--ovabrw-primary-font);
+  font-size: var(--ovabrw-text-size);
+  font-weight: var(--ovabrw-text-weight);
+  line-height: var(--ovabrw-text-line-height);
+  color: var(--ovabrw-text-color);
+  padding: 0 5px;
+  font-size: 14px;
+  transform: translate(-50%, 0);
+  margin-bottom: 7px;
+  border: 1px solid var(--ovabrw-light-color);
+}
+.ovabrw-search-taxi-ajax .search-taxi-form .search-taxi-fields .search-field .ovabrw-filter-price-slider .product-filter-price .noUi-base .noUi-origin .noUi-handle:before, .ovabrw-search-taxi-ajax .search-taxi-form .search-taxi-fields .search-field .ovabrw-filter-price-slider .product-filter-price .noUi-base .noUi-origin .noUi-handle:after {
+  display: none;
+}
+.ovabrw-search-taxi-ajax .search-taxi-form .search-taxi-fields .auto-search-wrapper .auto-results-wrapper {
+  border: 1px solid #EBEBEB;
+  margin-top: -3px;
+}
+.ovabrw-search-taxi-ajax .search-taxi-form .search-taxi-fields .auto-search-wrapper .auto-results-wrapper ul li p {
+  margin: 0;
+}
+.ovabrw-search-taxi-ajax .search-taxi-form .search-taxi-fields .auto-search-wrapper .auto-clear {
+  margin: 0;
+  padding: 0;
+  top: 30px;
+  right: 0;
+  width: 20px;
+  height: 20px;
+}
+.ovabrw-search-taxi-ajax .search-taxi-form .search-taxi-fields .auto-search-wrapper .auto-clear:before {
+  width: 20px;
+  min-width: 20px;
+  height: 20px;
+}
+@media only screen and (max-width: 1300px) {
+  .ovabrw-search-taxi-ajax .search-taxi-form .search-taxi-fields.search-grid-5 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+@media only screen and (max-width: 1200px) {
+  .ovabrw-search-taxi-ajax .search-taxi-form .search-taxi-fields.search-grid-4, .ovabrw-search-taxi-ajax .search-taxi-form .search-taxi-fields.search-grid-5 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media only screen and (max-width: 1024px) {
+  .ovabrw-search-taxi-ajax .search-taxi-form .search-taxi-fields.search-grid-3, .ovabrw-search-taxi-ajax .search-taxi-form .search-taxi-fields.search-grid-4, .ovabrw-search-taxi-ajax .search-taxi-form .search-taxi-fields.search-grid-5 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media only screen and (max-width: 768px) {
+  .ovabrw-search-taxi-ajax .search-taxi-form .search-taxi-fields.search-grid-2, .ovabrw-search-taxi-ajax .search-taxi-form .search-taxi-fields.search-grid-3, .ovabrw-search-taxi-ajax .search-taxi-form .search-taxi-fields.search-grid-4, .ovabrw-search-taxi-ajax .search-taxi-form .search-taxi-fields.search-grid-5 {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+.ovabrw-search-taxi-ajax .ovabrw-search-taxi-results {
+  position: relative;
+}
+.ovabrw-search-taxi-ajax .ovabrw-search-taxi-results ul.products.ovabrw-product-list {
+  display: grid;
+  grid-gap: 28px 26px;
+  margin: 0;
+  padding: 0;
+  list-style-type: none !important;
+}
+.ovabrw-search-taxi-ajax .ovabrw-search-taxi-results ul.products.ovabrw-product-list .item {
+  overflow: hidden;
+}
+.ovabrw-search-taxi-ajax .ovabrw-search-taxi-results ul.products.ovabrw-product-list.one-column {
+  grid-template-columns: repeat(1, 1fr) !important;
+}
+.ovabrw-search-taxi-ajax .ovabrw-search-taxi-results ul.products.ovabrw-product-list.two-column {
+  grid-template-columns: repeat(2, 1fr) !important;
+}
+.ovabrw-search-taxi-ajax .ovabrw-search-taxi-results ul.products.ovabrw-product-list.three-column {
+  grid-template-columns: repeat(3, 1fr) !important;
+}
+.ovabrw-search-taxi-ajax .ovabrw-search-taxi-results ul.products.ovabrw-product-list:before, .ovabrw-search-taxi-ajax .ovabrw-search-taxi-results ul.products.ovabrw-product-list:after {
+  display: none;
+}
+@media only screen and (max-width: 1024px) {
+  .ovabrw-search-taxi-ajax .ovabrw-search-taxi-results ul.products.ovabrw-product-list.three-column {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .ovabrw-search-taxi-ajax .ovabrw-search-taxi-results ul.products.ovabrw-product-list.two-column, .ovabrw-search-taxi-ajax .ovabrw-search-taxi-results ul.products.ovabrw-product-list.three-column {
+    grid-template-columns: repeat(1, 1fr) !important;
+  }
+}
+.ovabrw-search-taxi-ajax .ovabrw-search-taxi-results .ovabrw-loader {
+  display: none;
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translate(0, -50%);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 3px solid;
+  border-color: var(--ovabrw-primary-color) var(--ovabrw-primary-color) transparent;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+  z-index: 1;
+}
+.ovabrw-search-taxi-ajax .ovabrw-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 15px 0 20px;
+  padding: 0;
+  list-style-type: none !important;
+}
+.ovabrw-search-taxi-ajax .ovabrw-pagination li .page-numbers {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 45px;
+  border-radius: 3px;
+  border: 1px solid var(--ovabrw-light-color);
+  background-color: #FFF;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  font-family: var(--ovabrw-primary-font);
+  font-size: var(--ovabrw-label-size);
+  font-weight: var(--ovabrw-label-weight);
+  line-height: var(--ovabrw-label-line-height);
+  color: var(--ovabrw-label-color);
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.ovabrw-search-taxi-ajax .ovabrw-pagination li .page-numbers.current, .ovabrw-search-taxi-ajax .ovabrw-pagination li .page-numbers:hover {
+  color: #FFF;
+  background-color: var(--ovabrw-primary-color);
+  border-color: var(--ovabrw-primary-color);
+}
+
+body.rtl .ovabrw-search-taxi-ajax .search-taxi-form .search-taxi-fields .search-field input, body.rtl .ovabrw-search-taxi-ajax .search-taxi-form .search-taxi-fields .search-field select {
+  padding-left: 40px;
+  padding-right: 17px;
+}
+body.rtl .ovabrw-search-taxi-ajax .search-taxi-form .search-taxi-fields .search-field > i {
+  right: unset;
+  left: 22px;
+}

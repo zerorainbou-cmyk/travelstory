@@ -1,0 +1,604 @@
+@charset "UTF-8";
+#booking-filter h2.wp-heading-inline {
+  display: flex;
+  align-items: center;
+}
+#booking-filter h2.wp-heading-inline button {
+  font-weight: 400;
+  margin: 0 10px;
+}
+#booking-filter .booking_filter {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-gap: 10px;
+}
+@media only screen and (max-width: 1400px) {
+  #booking-filter .booking_filter {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+@media only screen and (max-width: 1200px) {
+  #booking-filter .booking_filter {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media only screen and (max-width: 768px) {
+  #booking-filter .booking_filter {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media only screen and (max-width: 480px) {
+  #booking-filter .booking_filter {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+#booking-filter .booking_filter input, #booking-filter .booking_filter select, #booking-filter .booking_filter button {
+  width: 100%;
+  min-width: 100%;
+}
+#booking-filter .booking_filter input.ovabrw-datetimepicker {
+  background-color: #FFFFFF;
+}
+#booking-filter .booking_filter .form-field {
+  position: relative;
+}
+#booking-filter .ovabrw-order-view {
+  display: block;
+  background: unset;
+  margin-bottom: 5px;
+}
+#booking-filter .ovabrw-order-view:last-child {
+  margin-bottom: 0;
+}
+#booking-filter .ovabrw-order-view a {
+  word-wrap: break-word;
+  -moz-white-space: normal !important;
+  white-space: normal !important;
+}
+#booking-filter .ovabrw-order-status {
+  display: inline-flex;
+  height: 33px;
+  line-height: 2.25em;
+  color: #777;
+  background-color: #e5e5e5;
+  border-radius: 4px;
+  border: 1px solid #c3c4c7;
+  cursor: inherit !important;
+  white-space: nowrap;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+#booking-filter .ovabrw-order-status.status-completed {
+  background-color: #c8d7e1;
+  color: #2e4453;
+}
+#booking-filter .ovabrw-order-status.status-on-hold {
+  background-color: #f8dda7;
+  color: #94660c;
+}
+#booking-filter .ovabrw-order-status.status-failed {
+  background-color: #eba3a3;
+  color: #761919;
+}
+#booking-filter .ovabrw-order-status.status-processing {
+  background-color: #c6e1c6;
+  color: #5b841b;
+}
+#booking-filter .ovabrw-order-status.status-trash {
+  background-color: #eba3a3;
+  color: #761919;
+}
+#booking-filter .ovabrw-order-status .ovabrw-deposit-status, #booking-filter .ovabrw-order-status .ovabrw-insurance-status {
+  padding: 0 10px;
+}
+#booking-filter table.bookings tbody tr td {
+  padding: 1em 10px;
+}
+#booking-filter table.bookings tbody tr td .order-preview {
+  float: right;
+  width: 16px;
+  padding: 20px 4px 4px 4px;
+  height: 0;
+  overflow: hidden;
+  position: relative;
+  border: 2px solid transparent;
+  border-radius: 4px;
+}
+#booking-filter table.bookings tbody tr td .order-preview:before {
+  font-family: WooCommerce;
+  speak: never;
+  font-weight: 400;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  margin: 0;
+  text-indent: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  content: "";
+  line-height: 16px;
+  font-size: 14px;
+  vertical-align: middle;
+  top: 4px;
+}
+#booking-filter table.bookings tbody tr td .order-preview:hover {
+  border: 2px solid #00a0d2;
+}
+#booking-filter table.bookings tbody tr td .order-preview:focus {
+  box-shadow: none;
+  outline: none;
+}
+#booking-filter table.bookings tbody tr td .order-preview.disabled:before {
+  content: "";
+  background: url(../../img/wpspin-2x.gif) no-repeat center top;
+  background-size: 71%;
+}
+#booking-filter table.bookings tbody tr td .order-dowload-ical, #booking-filter table.bookings tbody tr td .order-sync-gcal {
+  float: right;
+  padding: 2px;
+  overflow: hidden;
+  position: relative;
+  border: 2px solid transparent;
+  border-radius: 4px;
+}
+#booking-filter table.bookings tbody tr td .order-dowload-ical span, #booking-filter table.bookings tbody tr td .order-sync-gcal span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#booking-filter table.bookings tbody tr td .order-dowload-ical.disabled span:before, #booking-filter table.bookings tbody tr td .order-sync-gcal.disabled span:before {
+  color: transparent;
+  background: url(../../img/wpspin-2x.gif) no-repeat center top;
+  background-size: 87%;
+  margin-top: 5px;
+}
+
+@keyframes ovabrw-rotation {
+  0% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+.wrap .ovabrw-backbone-modal {
+  display: none;
+}
+.wrap .ovabrw-backbone-modal .ovabrw-backbone-modal-content {
+  position: fixed;
+  background: #fff;
+  z-index: 2;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 50%;
+  max-width: 100%;
+  min-width: 500px;
+  height: auto;
+  max-height: 85vh;
+  box-sizing: border-box;
+}
+.wrap .ovabrw-backbone-modal .ovabrw-backbone-modal-content .ovabrw-backbone-modal-main {
+  max-height: 85vh;
+  overflow: hidden;
+}
+.wrap .ovabrw-backbone-modal .ovabrw-backbone-modal-content .ovabrw-backbone-modal-main .ovabrw-backbone-modal-header {
+  display: block;
+  position: sticky;
+  top: -1px;
+  height: auto;
+  background: #fcfcfc;
+  padding: 1em 1.5em 0 1.5em;
+  border-bottom: 1px solid #ddd;
+}
+.wrap .ovabrw-backbone-modal .ovabrw-backbone-modal-content .ovabrw-backbone-modal-main .ovabrw-backbone-modal-header .order-status {
+  display: inline-flex;
+  line-height: 2.5em;
+  color: #777;
+  background: #e5e5e5;
+  border-radius: 4px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  margin: -0.25em 0;
+  cursor: inherit !important;
+  white-space: nowrap;
+  max-width: 100%;
+  float: right;
+  margin-right: 54px;
+}
+.wrap .ovabrw-backbone-modal .ovabrw-backbone-modal-content .ovabrw-backbone-modal-main .ovabrw-backbone-modal-header .order-status span {
+  margin: 0 1em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.wrap .ovabrw-backbone-modal .ovabrw-backbone-modal-content .ovabrw-backbone-modal-main .ovabrw-backbone-modal-header .order-status.status-completed {
+  background: #c8d7e1;
+  color: #2e4453;
+}
+.wrap .ovabrw-backbone-modal .ovabrw-backbone-modal-content .ovabrw-backbone-modal-main .ovabrw-backbone-modal-header .order-status.status-on-hold {
+  background: #f8dda7;
+  color: #94660c;
+}
+.wrap .ovabrw-backbone-modal .ovabrw-backbone-modal-content .ovabrw-backbone-modal-main .ovabrw-backbone-modal-header .order-status.status-failed {
+  background: #eba3a3;
+  color: #761919;
+}
+.wrap .ovabrw-backbone-modal .ovabrw-backbone-modal-content .ovabrw-backbone-modal-main .ovabrw-backbone-modal-header .order-status.status-processing {
+  background: #c6e1c6;
+  color: #5b841b;
+}
+.wrap .ovabrw-backbone-modal .ovabrw-backbone-modal-content .ovabrw-backbone-modal-main .ovabrw-backbone-modal-header .order-status.status-trash {
+  background: #eba3a3;
+  color: #761919;
+}
+.wrap .ovabrw-backbone-modal .ovabrw-backbone-modal-content .ovabrw-backbone-modal-main .ovabrw-backbone-modal-header h1 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.5em;
+  max-width: calc(100% - 54px);
+}
+.wrap .ovabrw-backbone-modal .ovabrw-backbone-modal-content .ovabrw-backbone-modal-main .ovabrw-backbone-modal-header .modal-close-link {
+  cursor: pointer;
+  color: #777;
+  height: 54px;
+  width: 54px;
+  padding: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+  text-align: center;
+  border: 0;
+  border-left: 1px solid #ddd;
+  background-color: transparent;
+  transition: color 0.1s ease-in-out, background 0.1s ease-in-out;
+}
+.wrap .ovabrw-backbone-modal .ovabrw-backbone-modal-content .ovabrw-backbone-modal-main .ovabrw-backbone-modal-header .modal-close-link:before {
+  font: normal 22px/50px dashicons !important;
+  color: #666;
+  display: block;
+  content: "";
+  font-weight: 300;
+}
+.wrap .ovabrw-backbone-modal .ovabrw-backbone-modal-content .ovabrw-backbone-modal-main .ovabrw-backbone-modal-header .modal-close-link:focus, .wrap .ovabrw-backbone-modal .ovabrw-backbone-modal-content .ovabrw-backbone-modal-main .ovabrw-backbone-modal-header .modal-close-link:hover {
+  background: #ddd;
+  border-color: #ccc;
+  color: #000;
+  outline: 0;
+}
+.wrap .ovabrw-backbone-modal .ovabrw-backbone-modal-content .ovabrw-backbone-modal-main article {
+  overflow: auto;
+  height: auto;
+}
+.wrap .ovabrw-backbone-modal .ovabrw-backbone-modal-content .ovabrw-backbone-modal-main article .ovabrw-order-preview-addresses {
+  overflow: hidden;
+  padding-bottom: 1.5em;
+}
+.wrap .ovabrw-backbone-modal .ovabrw-backbone-modal-content .ovabrw-backbone-modal-main article .ovabrw-order-preview-addresses .ovabrw-order-preview-address, .wrap .ovabrw-backbone-modal .ovabrw-backbone-modal-content .ovabrw-backbone-modal-main article .ovabrw-order-preview-addresses .ovabrw-order-preview-note {
+  width: 50%;
+  float: left;
+  padding: 1.5em 1.5em 0;
+  box-sizing: border-box;
+  word-wrap: break-word;
+}
+.wrap .ovabrw-backbone-modal .ovabrw-backbone-modal-content .ovabrw-backbone-modal-main article .ovabrw-order-preview-addresses .ovabrw-order-preview-address h2, .wrap .ovabrw-backbone-modal .ovabrw-backbone-modal-content .ovabrw-backbone-modal-main article .ovabrw-order-preview-addresses .ovabrw-order-preview-note h2 {
+  margin-top: 0;
+}
+.wrap .ovabrw-backbone-modal .ovabrw-backbone-modal-content .ovabrw-backbone-modal-main article .ovabrw-order-preview-addresses .ovabrw-order-preview-address strong, .wrap .ovabrw-backbone-modal .ovabrw-backbone-modal-content .ovabrw-backbone-modal-main article .ovabrw-order-preview-addresses .ovabrw-order-preview-note strong {
+  display: block;
+  margin-top: 1.5em;
+}
+.wrap .ovabrw-backbone-modal .ovabrw-backbone-modal-content .ovabrw-backbone-modal-main article p {
+  margin: 1.5em 0;
+}
+.wrap .ovabrw-backbone-modal .ovabrw-backbone-modal-content .ovabrw-backbone-modal-main article p:first-child {
+  margin-top: 0;
+}
+.wrap .ovabrw-backbone-modal .ovabrw-backbone-modal-content .ovabrw-backbone-modal-main article p:last-child {
+  margin-bottom: 0;
+}
+.wrap .ovabrw-backbone-modal .ovabrw-backbone-modal-content .ovabrw-backbone-modal-main article .pagination {
+  padding: 10px 0 0;
+  text-align: center;
+}
+.wrap .ovabrw-backbone-modal .ovabrw-backbone-modal-content .ovabrw-backbone-modal-main article .ovabrw-item-html table {
+  width: 100%;
+  margin: 0;
+  border: 0;
+  box-shadow: none;
+}
+.wrap .ovabrw-backbone-modal .ovabrw-backbone-modal-content .ovabrw-backbone-modal-main article .ovabrw-item-html table th, .wrap .ovabrw-backbone-modal .ovabrw-backbone-modal-content .ovabrw-backbone-modal-main article .ovabrw-item-html table td {
+  position: relative;
+  padding: 1em 1.5em;
+  text-align: left;
+  border: 0;
+  border-bottom: 1px solid #eee;
+  margin: 0;
+  background: transparent;
+  box-shadow: none;
+  text-align: right;
+  vertical-align: top;
+}
+.wrap .ovabrw-backbone-modal .ovabrw-backbone-modal-content .ovabrw-backbone-modal-main article .ovabrw-item-html table th input:not([type=checkbox]):not([type=radio]), .wrap .ovabrw-backbone-modal .ovabrw-backbone-modal-content .ovabrw-backbone-modal-main article .ovabrw-item-html table th select, .wrap .ovabrw-backbone-modal .ovabrw-backbone-modal-content .ovabrw-backbone-modal-main article .ovabrw-item-html table th textarea, .wrap .ovabrw-backbone-modal .ovabrw-backbone-modal-content .ovabrw-backbone-modal-main article .ovabrw-item-html table td input:not([type=checkbox]):not([type=radio]), .wrap .ovabrw-backbone-modal .ovabrw-backbone-modal-content .ovabrw-backbone-modal-main article .ovabrw-item-html table td select, .wrap .ovabrw-backbone-modal .ovabrw-backbone-modal-content .ovabrw-backbone-modal-main article .ovabrw-item-html table td textarea {
+  width: 100%;
+  margin: 0;
+}
+.wrap .ovabrw-backbone-modal .ovabrw-backbone-modal-content .ovabrw-backbone-modal-main article .ovabrw-item-html table th input, .wrap .ovabrw-backbone-modal .ovabrw-backbone-modal-content .ovabrw-backbone-modal-main article .ovabrw-item-html table td input {
+  line-height: normal;
+}
+.wrap .ovabrw-backbone-modal .ovabrw-backbone-modal-content .ovabrw-backbone-modal-main article .ovabrw-item-html table th input:read-only, .wrap .ovabrw-backbone-modal .ovabrw-backbone-modal-content .ovabrw-backbone-modal-main article .ovabrw-item-html table td input:read-only {
+  background-color: #FFFFFF;
+}
+.wrap .ovabrw-backbone-modal .ovabrw-backbone-modal-content .ovabrw-backbone-modal-main article .ovabrw-item-html table th input:focus, .wrap .ovabrw-backbone-modal .ovabrw-backbone-modal-content .ovabrw-backbone-modal-main article .ovabrw-item-html table td input:focus {
+  border-color: #8c8f94;
+  box-shadow: none;
+  outline: none;
+}
+.wrap .ovabrw-backbone-modal .ovabrw-backbone-modal-content .ovabrw-backbone-modal-main article .ovabrw-item-html table td:first-child,
+.wrap .ovabrw-backbone-modal .ovabrw-backbone-modal-content .ovabrw-backbone-modal-main article .ovabrw-item-html table th:first-child {
+  text-align: left;
+}
+.wrap .ovabrw-backbone-modal .ovabrw-backbone-modal-content .ovabrw-backbone-modal-main article .ovabrw-item-html table th {
+  border-color: #ccc;
+}
+.wrap .ovabrw-backbone-modal .ovabrw-backbone-modal-content .ovabrw-backbone-modal-main article .ovabrw-item-html table tr:last-child td {
+  border: 0;
+}
+.wrap .ovabrw-backbone-modal .ovabrw-backbone-modal-content .ovabrw-backbone-modal-main article .ovabrw-item-html table .wc-order-item-sku {
+  margin-top: 0.5em;
+}
+.wrap .ovabrw-backbone-modal .ovabrw-backbone-modal-content .ovabrw-backbone-modal-main article .ovabrw-item-html table .wc-order-item-meta {
+  margin-top: 0.5em;
+}
+.wrap .ovabrw-backbone-modal .ovabrw-backbone-modal-content .ovabrw-backbone-modal-main article .ovabrw-item-html table .wc-order-item-meta th,
+.wrap .ovabrw-backbone-modal .ovabrw-backbone-modal-content .ovabrw-backbone-modal-main article .ovabrw-item-html table .wc-order-item-meta td {
+  padding: 0;
+  border: 0;
+  text-align: left;
+  vertical-align: top;
+}
+.wrap .ovabrw-backbone-modal .ovabrw-backbone-modal-content .ovabrw-backbone-modal-main article .ovabrw-item-html table .wc-order-item-meta td:last-child {
+  padding-left: 0.5em;
+}
+.wrap .ovabrw-backbone-modal .ovabrw-backbone-modal-content .ovabrw-backbone-modal-main article .ovabrw-order-totals {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  max-width: 100%;
+  padding: 1em 1.5em;
+  margin-bottom: 60px;
+  border-top: 1px solid #eee;
+}
+.wrap .ovabrw-backbone-modal .ovabrw-backbone-modal-content .ovabrw-backbone-modal-main article .ovabrw-order-totals table {
+  width: 50%;
+  margin: 0;
+  padding: 0;
+  text-align: right;
+}
+.wrap .ovabrw-backbone-modal .ovabrw-backbone-modal-content .ovabrw-backbone-modal-main article .ovabrw-order-totals table tbody tr.ovabrw-total-payable + tr {
+  display: none;
+}
+.wrap .ovabrw-backbone-modal .ovabrw-backbone-modal-content .ovabrw-backbone-modal-main article .ovabrw-order-totals table .label {
+  vertical-align: top;
+}
+.wrap .ovabrw-backbone-modal .ovabrw-backbone-modal-content .ovabrw-backbone-modal-main article .ovabrw-order-totals table .label.label-highlight {
+  font-weight: 700;
+}
+.wrap .ovabrw-backbone-modal .ovabrw-backbone-modal-content .ovabrw-backbone-modal-main article .ovabrw-order-totals table .total {
+  font-size: 1em !important;
+  width: 10em;
+  margin: 0 0 0 0.5em;
+  box-sizing: border-box;
+}
+.wrap .ovabrw-backbone-modal .ovabrw-backbone-modal-content .ovabrw-backbone-modal-main article .ovabrw-order-totals table .total .amount {
+  font-weight: 700;
+}
+.wrap .ovabrw-backbone-modal .ovabrw-backbone-modal-content .ovabrw-backbone-modal-main footer {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  padding: 1em 1.5em;
+  background: #fcfcfc;
+  border-top: 1px solid #dfdfdf;
+  box-shadow: 0 -4px 4px -4px rgba(0, 0, 0, 0.1);
+}
+.wrap .ovabrw-backbone-modal .ovabrw-backbone-modal-content .ovabrw-backbone-modal-main footer .inner {
+  text-align: right;
+}
+.wrap .ovabrw-backbone-modal .ovabrw-backbone-modal-content .ovabrw-backbone-modal-main footer .inner .ovabrw-footer-actions {
+  display: inline-block;
+  float: left;
+}
+.wrap .ovabrw-backbone-modal .ovabrw-backbone-modal-content .ovabrw-backbone-modal-main footer .inner .ovabrw-footer-actions .wc-action-button-group label {
+  display: none;
+  margin-right: 6px;
+  cursor: default;
+  font-weight: 700;
+  line-height: 28px;
+}
+.wrap .ovabrw-backbone-modal .ovabrw-backbone-modal-content .ovabrw-backbone-modal-main footer .inner .ovabrw-footer-actions .wc-action-button-group .wc-action-button-group__items {
+  display: inline-flex;
+  flex-flow: row wrap;
+  align-content: flex-start;
+  justify-content: flex-start;
+}
+.wrap .ovabrw-backbone-modal .ovabrw-backbone-modal-content .ovabrw-backbone-modal-main footer .inner .ovabrw-footer-actions .wc-action-button-group .wc-action-button-group__items .wc-action-button {
+  margin: 0 0 0 -1px !important;
+  border: 1px solid #ccc;
+  padding: 0 10px !important;
+  border-radius: 0 !important;
+  float: none;
+  height: auto;
+  z-index: 1;
+  position: relative;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex: 1 0 auto;
+  box-sizing: border-box;
+  text-align: center;
+  white-space: nowrap;
+}
+.wrap .ovabrw-backbone-modal .ovabrw-backbone-modal-content .ovabrw-backbone-modal-main footer .inner .ovabrw-footer-actions .wc-action-button-group .wc-action-button-group__items .wc-action-button:hover, .wrap .ovabrw-backbone-modal .ovabrw-backbone-modal-content .ovabrw-backbone-modal-main footer .inner .ovabrw-footer-actions .wc-action-button-group .wc-action-button-group__items .wc-action-button:focus {
+  border: 1px solid #999;
+  z-index: 2;
+}
+.wrap .ovabrw-backbone-modal .ovabrw-backbone-modal-content .ovabrw-backbone-modal-main footer .inner .ovabrw-footer-actions .wc-action-button-group .wc-action-button-group__items .wc-action-button:first-child {
+  margin-left: 0 !important;
+  border-top-left-radius: 3px !important;
+  border-bottom-left-radius: 3px !important;
+}
+.wrap .ovabrw-backbone-modal .ovabrw-backbone-modal-content .ovabrw-backbone-modal-main footer .inner .ovabrw-footer-actions .wc-action-button-group .wc-action-button-group__items .wc-action-button:last-child {
+  border-top-right-radius: 3px !important;
+  border-bottom-right-radius: 3px !important;
+}
+.wrap .ovabrw-backbone-modal .ovabrw-backbone-modal-content .ovabrw-backbone-modal-main footer .inner .button {
+  margin-bottom: 0;
+}
+.wrap .ovabrw-backbone-modal .ovabrw-backbone-modal-content .ovabrw-backbone-modal-main footer .inner .button.button-large {
+  margin-left: 10px;
+  padding: 0 1em !important;
+  height: auto;
+  display: inline-block;
+}
+.wrap .ovabrw-sync-cal-wrap {
+  display: none;
+}
+.wrap .ovabrw-sync-cal-wrap .ovabrw-sync-cal-container {
+  position: fixed;
+  background-color: #FFFFFF;
+  padding: 35px 20px 20px;
+  z-index: 2;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  box-sizing: border-box;
+  box-shadow: 0 4px 10px 0 rgba(85, 93, 102, 0.3);
+  border-radius: 4px;
+}
+.wrap .ovabrw-sync-cal-wrap .ovabrw-sync-cal-container .sync-label {
+  margin: 0 0 10px;
+}
+.wrap .ovabrw-sync-cal-wrap .ovabrw-sync-cal-container .sync-cal-close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  color: #0a4b78;
+  background-color: #f6f7f7;
+  border-radius: 0 4px 0 4px;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.wrap .ovabrw-sync-cal-wrap .ovabrw-sync-cal-container .sync-cal-close:hover {
+  background-color: #f0f0f1;
+}
+.wrap .ovabrw-sync-cal-wrap .ovabrw-sync-cal-container .ovabrw-sync-cal-filter {
+  margin-bottom: 15px;
+}
+.wrap .ovabrw-sync-cal-wrap .ovabrw-sync-cal-container .ovabrw-sync-cal-filter form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+.wrap .ovabrw-sync-cal-wrap .ovabrw-sync-cal-container .ovabrw-sync-cal-filter form .form-field input {
+  width: 100%;
+  background-color: #FFFFFF;
+}
+.wrap .ovabrw-sync-cal-wrap .ovabrw-sync-cal-container .ovabrw-sync-cal-progress {
+  display: none;
+}
+.wrap .ovabrw-sync-cal-wrap .ovabrw-sync-cal-container .ovabrw-sync-cal-progress .progress-bg {
+  width: 100%;
+  background: #eee;
+  height: 15px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  overflow: hidden;
+}
+.wrap .ovabrw-sync-cal-wrap .ovabrw-sync-cal-container .ovabrw-sync-cal-progress .progress-bg .progress-fill {
+  width: 0%;
+  background: #2271b1;
+  height: 100%;
+  transition: width 0.5s ease;
+}
+.wrap .ovabrw-sync-cal-wrap .ovabrw-sync-cal-container .ovabrw-sync-cal-progress .progress-results {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+.wrap .ovabrw-sync-cal-wrap .ovabrw-sync-cal-container .ovabrw-sync-cal-progress .sync-log {
+  font-size: 12px;
+  color: #666;
+  margin-bottom: 15px;
+  border: 1px solid #eee;
+  border-radius: 4px;
+  padding: 10px;
+  height: 70px;
+  max-height: 70px;
+  overflow: scroll;
+}
+.wrap .ovabrw-sync-cal-wrap .ovabrw-sync-cal-container .ovabrw-sync-cal-progress .sync-log p {
+  margin: 0;
+  font-style: italic;
+}
+.wrap .ovabrw-sync-cal-wrap .ovabrw-sync-cal-container .ovabrw-sync-cal-log {
+  display: none;
+  color: red;
+  font-style: italic;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+.wrap .ovabrw-sync-cal-wrap .ovabrw-sync-cal-container .ovabrw-sync-cal-btn button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 5px;
+}
+.wrap .ovabrw-sync-cal-wrap .ovabrw-sync-cal-container .ovabrw-sync-cal-btn button span.dashicons {
+  display: none;
+  line-height: 1;
+}
+.wrap .ovabrw-sync-cal-wrap .ovabrw-sync-cal-container .ovabrw-sync-cal-btn button span.dashicons.dashicons-update-alt {
+  animation: ovabrw-rotation 1s linear infinite;
+}
+.wrap .ovabrw-backbone-modal-backdrop {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  min-height: 360px;
+  background: #000;
+  opacity: 0.7;
+  z-index: 1;
+}
+@media screen and (max-width: 782px) {
+  .wrap .ovabrw-backbone-modal .ovabrw-backbone-modal-content {
+    min-width: 100%;
+    height: 100vh;
+    max-height: 100vh;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .ovabrw-datepicker, .ovabrw-datetimepicker {
+    font-size: 16px !important;
+  }
+}
